@@ -9,6 +9,25 @@
   box-sizing: border-box;
 }
 
+// #cont-cards{
+//   border-top: solid grey 1px;
+// }
+
+.top-page{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+#title-offers{
+  padding-top: 30px;
+  border-bottom: solid grey 1px;
+}
+
+h3{
+  color: grey;
+}
 /* CARDS */
 
 .cards {
@@ -56,6 +75,7 @@
 
 .card__link:hover::after {
   width: 100%;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .card__avatar {

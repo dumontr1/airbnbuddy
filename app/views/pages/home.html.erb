@@ -4,56 +4,21 @@
     <p>Find the buddy you need.</p>
   </div>
 </div>
-
-<div class="container mt-5">
-  <ul>
+<div class="container" id="title-offers">
+  <div class="row">
+    <h3>All offers</h3>
+  </div>
+</div>
+<div id="cont-cards">
+  <div class="cards">
     <% @offers.each do |offer| %>
-    <li> <%= offer.title %>   <%= link_to "View", "offers/#{offer.id}" %></li>
+    <div class="card card-<%= rand(1..5) %>">
+      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %></div>
+      <h2 class="card__title"><%= offer.title %></h2>
+      <p class="card__apply">
+        <a class="card__link"><%= link_to "See full offer", "/offers/#{offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
+      </p>
+    </div>
     <% end %>
-  </ul>
-
-<div class="cards">
-  <div class="card card-1">
-      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %></div>
-      <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-      <p class="card__apply">
-        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-      </p>
-    </div>
-    <div class="card card-2">
-      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %></div>
-      <h2 class="card__title">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-      <p class="card__apply">
-        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-      </p>
-    </div>
-    <div class="card card-3">
-      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt", alt: "avatar-large" %></div>
-      <h2 class="card__title">Ut enim ad minim veniam.</h2>
-      <p class="card__apply">
-        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-      </p>
-    </div>
-    <div class="card card-4">
-      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt", alt: "avatar-large" %></div>
-      <h2 class="card__title">Quis nostrud exercitation ullamco laboris nisi.</h2>
-      <p class="card__apply">
-        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-      </p>
-    </div>
-    <div class="card card-5">
-      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt", alt: "avatar-large" %></div>
-      <h2 class="card__title">Ut aliquip ex ea commodo consequat. Duis aute irure dolor.</h2>
-      <p class="card__apply">
-        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-      </p>
-    </div>
-    <div class="card card-1">
-      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt", alt: "avatar-large" %></div>
-      <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-      <p class="card__apply">
-        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-      </p>
-    </div>
   </div>
 </div>

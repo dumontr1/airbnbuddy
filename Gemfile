@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # TODO: ADD DEVISE TO PROJECT
 gem 'devise'
 
+gem 'faker'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
