@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="title">
+    <div class="top">
+      <h1><%= @offer.title %></h1>
+      <%= @offer.user_id %>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <p><%= @offer.details %></p>
+</div>
+<div class="container">
+  <div class="destroy">
+  <%= link_to "Delete",
+              offer_path(@offer),
+              method: :delete,
+              data: { confirm: "Are you sure?" }%>
+  </div>
+</div>

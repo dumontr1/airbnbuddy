@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container mt-5">
+  <div class="title">
+    <h1>AirBnBuddy</h1>
+    <p>Welcome!!</p>
+  </div>
+</div>
+<div class="container mt-5">
+  <ul>
+    <% @offers.each do |offer| %>
+    <li> <%= offer.title %>   <%= link_to "View", "offers/#{offer.id}" %></li>
+    <% end %>
+  </ul>
+</div>
