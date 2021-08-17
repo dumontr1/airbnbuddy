@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="title mt-5 mb-5">
+    <h1>Create a new offer</h1>
+  </div>
+</div>
+
+<div class="container">
+  <%= simple_form_for(@offer) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.input :price %>
+    <%= f.submit %>
+  <% end %>
+</div>
