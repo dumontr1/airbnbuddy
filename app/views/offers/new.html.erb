@@ -5,10 +5,12 @@
 </div>
 
 <div class="container">
-  <%= simple_form_for(@offer) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :details %>
-    <%= f.input :price %>
-    <%= f.submit %>
-  <% end %>
+  <div class="content">
+    <%= simple_form_for(@offer) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :details %>
+      <%= f.input :price %>
+      <%= f.submit class: 'btn btn-success' %>
+    <% end %>
+  </div>
 </div>
