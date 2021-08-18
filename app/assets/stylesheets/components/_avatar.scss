@@ -1,6 +1,8 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
+  border: 3px solid transparent;
+  background: linear-gradient(230.46deg, #ff94c1 -2.98%, #A1A4FF 68.14%, #d8a6c4 104.54%);
 }
 .avatar-large {
   width: 56px;
