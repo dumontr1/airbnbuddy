@@ -12,9 +12,11 @@
 </div>
 <div class="container">
   <div class="destroy">
-  <%= link_to "Delete",
+  <% if current_user == @offer.user %>
+    <%= link_to "Delete",
               offer_path(@offer),
               method: :delete,
               data: { confirm: "Are you sure?" }%>
+  <% end %>
   </div>
 </div>
