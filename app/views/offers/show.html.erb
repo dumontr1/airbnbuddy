@@ -1,20 +1,21 @@
-<div class="container mt-5">
-  <div class="title">
+<div class="container">
+  <div class="title mt-5 mb-5 title-hr">
     <div class="top">
       <h1><%= @offer.title %></h1>
-      <%= @offer.price %>
-
+      <p><%= @offer.price %>€</p>
     </div>
   </div>
 </div>
-<div class="container mt-5">
-  <p><%= @offer.details %></p>
-</div>
-<div class="container">
-  <div class="destroy">
-  <%= link_to "Delete",
-              offer_path(@offer),
-              method: :delete,
-              data: { confirm: "Are you sure?" }%>
+<div class="card-lg">
+  <div class="container mt-5">
+    <p><%= @offer.details %></p>
+  </div>
+  <div class="container">
+    <div class="destroy">
+    <%= link_to "Delete",
+                offer_path(@offer),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: "btn btn-danger"%>
+    </div>
   </div>
 </div>
