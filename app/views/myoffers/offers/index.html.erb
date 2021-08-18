@@ -1,0 +1,15 @@
+<h1>My offers</h1>
+
+<div id="cont-cards">
+  <div class="cards">
+    <% @my_offers.each do |my_offer| %>
+    <div class="card card-<%= rand(1..5) %>">
+      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %></div>
+      <h2 class="card__title"><%= my_offer.title %></h2>
+      <p class="card__apply">
+        <a class="card__link"><%= link_to "See full offer", "/offers/#{my_offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</div>
