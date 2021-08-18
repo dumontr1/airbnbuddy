@@ -23,7 +23,6 @@ class OffersController < ApplicationController
       redirect_to offer_path(@offer)
   end
 
-
   private
 
   def offer_params
