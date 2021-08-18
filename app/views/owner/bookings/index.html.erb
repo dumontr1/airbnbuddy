@@ -1,7 +1,10 @@
-<h1>All your bookings</h1>
-
-<% @offers.each do |offer| %>
-  <% offer.bookings.each do |booking| %>
-    <%= booking.status %>
+<div class="container mt-5">
+  <h1>Your bookings as a Buddy</h1>
+</div>
+<div class="container mt-5">
+  <% @offers.each do |offer| %>
+    <% offer.bookings.each do |booking| %>
+      <%= booking.status %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
