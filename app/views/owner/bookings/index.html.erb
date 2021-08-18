@@ -1,0 +1,7 @@
+<h1>All your bookings</h1>
+
+<% @offers.each do |offer| %>
+  <% offer.bookings.each do |booking| %>
+    <%= booking.status %>
+  <% end %>
+<% end %>
