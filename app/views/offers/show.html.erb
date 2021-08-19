@@ -19,7 +19,14 @@
             <%= link_to "Delete",
                       offer_path(@offer),
                       method: :delete,
-                      data: { confirm: "Are you sure?" }, class: "btn btn-danger"%>
+                      data: { confirm: "Are you sure?" },
+                      class: "btn btn-danger"%>
+          <% else %>
+            <%= simple_form_for([@offer, @booking]) do |f|%>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.submit %>
+            <% end  %>
           <% end %>
           </div>
         </div>

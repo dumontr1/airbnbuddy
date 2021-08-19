@@ -5,10 +5,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @offer = Offer.find(params[:offer_id]) #a vérifier
+    @offer = Offer.find(params[:offer_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.status = 1
+    @booking.offer = @offer
     if @booking.save
       redirect_to owner_bookings_path
     else
@@ -17,12 +18,11 @@ class BookingsController < ApplicationController
   end
 
   def update
-
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :id_offer, :start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
