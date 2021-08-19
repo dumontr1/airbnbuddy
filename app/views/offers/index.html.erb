@@ -16,8 +16,12 @@
       <div class="notification-content">
         <p><small><%= offer.user.nickname %></small></p>
       </div>
-      <div class="card__icon"><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %></div>
-      <h2 class="card__title"><%= offer.title %></h2>
+      <div class="card__icon">
+        <%= cl_image_tag offer.user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %>
+      </div>
+      <h2 class="card__title">
+        <%= offer.title %>
+      </h2>
       <p class="card__apply">
         <a class="card__link"><%= link_to "See full offer", "/offers/#{offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
       </p>
