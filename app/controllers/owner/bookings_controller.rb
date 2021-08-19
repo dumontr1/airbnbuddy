@@ -1,6 +1,6 @@
 class Owner::BookingsController < ApplicationController
-
   def index
-    @offers = current_user.offers
+    @my_offers = Booking.where(user_id: current_user)
+    @offers = Offer.all
   end
 end
