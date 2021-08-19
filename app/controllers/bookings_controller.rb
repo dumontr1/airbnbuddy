@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
 
-    @booking.pending!
+    @booking.status = 1
     if @booking.save
       redirect_to owner_bookings_path
     else

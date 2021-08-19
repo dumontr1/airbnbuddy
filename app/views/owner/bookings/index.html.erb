@@ -1,46 +1,12 @@
-<style>
-  .card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  }
-
-  .card-product img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
-
-  .card-product h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .card-product p {
-    font-size: 12px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
-  }
-
-  .card-product .card-product-infos {
-    padding: 16px;
-  }
-</style>
-
-
 <div class="container">
-  <h1>Your bookings as a Buddy</h1>
+  <div class="title mt-5 mb-5 title-hr">
+      <h1>Your bookings</h1>
+  </div>
 </div>
 
 <div class="container">
-  <% @my_offers.each do |my_offer| %>
-    <%= @offers.find(my_offer.offer_id).title %>
-    <%= my_offer.status %>
+  <% @my_bookings.each do |my_booking| %>
+    <%= @offers.find(my_booking.offer_id).title %>
+    <%= my_booking.status %>
   <% end %>
 </div>
