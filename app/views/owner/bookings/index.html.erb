@@ -39,8 +39,8 @@
 </div>
 
 <div class="container">
-  <% @my_offers.each do |my_offer| %>
-    <%= @offers.find(my_offer.offer_id).title %>
-    <%= my_offer.status %>
+  <% @my_bookings.each do |my_booking| %>
+    <%= @offers.find(my_booking.offer_id).title %>
+    <%= my_booking.status %>
   <% end %>
 </div>
