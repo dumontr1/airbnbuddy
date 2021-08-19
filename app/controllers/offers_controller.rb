@@ -1,5 +1,13 @@
 class OffersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
+
+  def index
+    if user_signed_in?
+      @offers = Offer.where('user_id != ?', current_user.id)
+    else
+      @offers = Offer.all
+    end
+  end
 
   def destroy
     @offer = Offer.find(params[:id])
@@ -9,6 +17,7 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @booking = Booking.new
   end
 
 
@@ -17,10 +26,10 @@ class OffersController < ApplicationController
   end
 
   def create
-      @offer = Offer.new(offer_params)
-      @offer.user = current_user
-      @offer.save
-      redirect_to offer_path(@offer)
+    @offer = Offer.new(offer_params)
+    @offer.user = current_user
+    @offer.save
+    redirect_to offer_path(@offer)
   end
 
   private

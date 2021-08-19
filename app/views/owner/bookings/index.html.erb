@@ -38,17 +38,9 @@
   <h1>Your bookings as a Buddy</h1>
 </div>
 
-<div class="container mb-40">
-  <% @offers.each do |offer| %>
-    <% offer.bookings.each do |booking| %>
-      <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2><%= offer.title %></h2>
-        <p><strong>Status : </strong><%= booking.status %>...</p>
-        <p><strong>Details : </strong><%= offer.details %></p>
-      </div>
-    </div>
-    <% end %>
+<div class="container">
+  <% @my_offers.each do |my_offer| %>
+    <%= @offers.find(my_offer.offer_id).title %>
+    <%= my_offer.status %>
   <% end %>
 </div>

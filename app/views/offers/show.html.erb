@@ -8,6 +8,29 @@
 </div>
 <div class="card-lg">
   <div class="container mt-5">
-    <p><%= @offer.details %></p>
+    <div class="row">
+      <div class="col lg-10 align-middle">
+        <p><%= @offer.details %></p>
+      </div>
+        <div class="col lg-2 align-middle">
+        <div class="container">
+          <div class="destroy">
+          <% if current_user == @offer.user %>
+            <%= link_to "Delete",
+                      offer_path(@offer),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: "btn btn-danger"%>
+          <% else %>
+            <%= simple_form_for([@offer, @booking]) do |f|%>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.submit %>
+            <% end  %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
