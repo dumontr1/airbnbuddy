@@ -3,8 +3,8 @@ class Booking < ApplicationRecord
   belongs_to :user
 
   enum status: {
-    declined: 0,
+    refused: 0,
     pending: 1,
-    booked: 2
+    validated: 2
   }
 end

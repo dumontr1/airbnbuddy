@@ -11,7 +11,7 @@
       <div class="card__icon"><%= cl_image_tag current_user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %></div>
       <h2 class="card__title"><%= my_offer.title %></h2>
       <p class="card__apply">
-        <a class="card__link"><%= link_to "See full offer", "/offers/#{my_offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
+        <a class="card__link"><%= link_to "See full offer", "/myoffers/offers/#{my_offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
       </p>
     </div>
     <% end %>
