@@ -4,11 +4,21 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: :current_user)
   end
 
+  def update
+    @booking = Booking.find(params[:offer_id])
+    if params[:user_action] == "validate"
+      @booking.validated!
+    else
+      @booking.refused!
+    end
+    redirect_to myoffers_offer_path(@booking.offer)
+  end
+
   def create
     @offer = Offer.find(params[:offer_id]) #a vérifier
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.status = 1
+    @booking.pending!
     if @booking.save
       redirect_to owner_bookings_path
     else
@@ -16,9 +26,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  def update
 
-  end
 
   private
 
