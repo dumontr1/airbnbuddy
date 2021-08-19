@@ -8,16 +8,22 @@
 </div>
 <div class="card-lg">
   <div class="container mt-5">
-    <p><%= @offer.details %></p>
-  </div>
-  <div class="container">
-    <div class="destroy">
-    <% if current_user == @offer.user %>
-      <%= link_to "Delete",
-                offer_path(@offer),
-                method: :delete,
-                data: { confirm: "Are you sure?" }, class: "btn btn-danger"%>
-    <% end %>
-    </div>   
+    <div class="row">
+      <div class="col lg-10 align-middle">
+        <p><%= @offer.details %></p>
+      </div>
+        <div class="col lg-2 align-middle">
+        <div class="container">
+          <div class="destroy">
+          <% if current_user == @offer.user %>
+            <%= link_to "Delete",
+                      offer_path(@offer),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }, class: "btn btn-danger"%>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
