@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # TODO: ADD DEVISE TO PROJECT
 gem 'devise'
 
+# GEM FOR SEARCH BAR
+gem 'pg_search', '~> 2.3.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

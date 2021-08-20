@@ -3,9 +3,25 @@ class OffersController < ApplicationController
 
   def index
     if user_signed_in?
-      @offers = Offer.where('user_id != ?', current_user.id)
+      if params[:query].present?
+        sql_query = " \
+          offers.title @@ :query \
+          OR offers.details @@ :query \
+        "
+        @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @offers = Offer.where('user_id != ?', current_user.id)
+      end
     else
-      @offers = Offer.all
+      if params[:query].present?
+        sql_query = " \
+          offers.title @@ :query \
+          OR offers.details @@ :query \
+        "
+        @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @offers = Offer.all
+      end
     end
   end
 
