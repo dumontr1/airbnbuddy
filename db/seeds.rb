@@ -18,9 +18,9 @@ user3 = User.create!( nickname: "Mattéo", email: "matteo@gmail.com", password: 
 
 
 puts "Creating offers..."
-offer1 = Offer.create!( title: "Lavage de voiture", details: "Lavage eco-responsable de voiture à domicile ou au bureau.", price: 20, user_id: user1.id )
-offer2 = Offer.create!( title: "Déménagement", details: "Transporter et porter des charges lourdes et les monter sur plusieurs étages.", price: 30, user_id: user2.id )
-offer3 = Offer.create!( title: "Tondre la pelouse", details: "Tondre la pelouse. Tailler une haie. Arroser le jardin.", price: 25, user_id: user3.id )
+offer1 = Offer.create!( title: "Lavage de voiture", details: "Lavage eco-responsable de voiture à domicile ou au bureau.", price: 20, city: "Toulouse", user_id: user1.id )
+offer2 = Offer.create!( title: "Déménagement", details: "Transporter et porter des charges lourdes et les monter sur plusieurs étages.", city: "Bordeaux", price: 30, user_id: user2.id )
+offer3 = Offer.create!( title: "Tondre la pelouse", details: "Tondre la pelouse. Tailler une haie. Arroser le jardin.", price: 25, city: "Le Mans", user_id: user3.id )
 
 
 puts "Creating bookings..."
