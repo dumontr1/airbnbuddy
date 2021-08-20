@@ -5,21 +5,21 @@
   </div>
 </div>
 <div class="container title-hr">
-  <div class="row">
+  <div class="row justify-content-between mb-2">
     <h3>All offers</h3>
+    <div id="search-bar">
+      <%= form_tag offers_path, method: :get, class: "form-inline" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find what you need"
+        %>
+        <%= submit_tag "Search", class: "btn btn-success" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="search-bar">
-  <%= form_tag offers_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find what you need"
-  %>
-  <%= submit_tag "Search", class: "btn btn-success" %>
-  <% end %>
-</div>
 
 <div id="cont-cards">
   <div class="cards">
@@ -30,7 +30,7 @@
             <%= cl_image_tag offer.user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %>
           </div>
           <div class="notification-content text-dark align-self-center">
-            <p><small><%= offer.user.nickname %> - <%= offer.city %></small></p>
+            <p><%= offer.user.nickname %> - <em><%= offer.city %></em></p>
           </div>
         </div>
         <h2 class="card__title">

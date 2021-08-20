@@ -15,7 +15,7 @@
             <div class="card__icon pr-3 align-self-center">
               <%= cl_image_tag @offer.user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %>
             </div>
-            <p class="align-self-center"><small><%= @offer.user.nickname %> - <%= @offer.city %></small></p>
+            <p class="align-self-center"><%= @offer.user.nickname %> - <em><%= @offer.city %></em></p>
           </div>
         </div>
         <div class="col lg-2 align-middle">
