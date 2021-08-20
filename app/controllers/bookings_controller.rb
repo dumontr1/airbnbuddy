@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @offer = Offer.find(params[:offer_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @users = User.find(@offer.user_id)
 
     @booking.status = 1
     if @booking.save
