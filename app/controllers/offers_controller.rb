@@ -46,7 +46,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @offer.user = current_user
     @offer.save
-    redirect_to offer_path(@offer)
+    redirect_to myoffers_offer_path(@offer)
   end
 
   private

@@ -6,14 +6,26 @@
 
 <div id="cont-cards">
   <div class="cards">
-    <% @my_offers.each do |my_offer| %>
-    <div class="card card-<%= rand(1..5) %>">
-      <div class="card__icon"><%= cl_image_tag current_user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %></div>
-      <h2 class="card__title"><%= my_offer.title %></h2>
-      <p class="card__apply">
-        <a class="card__link"><%= link_to "See full offer", "/myoffers/offers/#{my_offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
-      </p>
-    </div>
+    <% @my_offers.each do |offer| %>
+      <div class="card card-<%= rand(1..5) %>">
+        <div class="card__icon d-flex justify-content-between">
+          <div class="align-self-center pr-3">
+            <%= cl_image_tag offer.user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %>
+          </div>
+          <div class="notification-content text-dark align-self-center">
+            <p>New bookings: <small><%= Booking.where(offer: offer, status: :pending).count %></small></p>
+          </div>
+        </div>
+        <h2 class="card__title">
+          <%= offer.title %>
+        </h2>
+        <div class="d-flex justify-content-between">
+          <p class="card__apply">
+            <a class="card__link"><%= link_to "See full offer", "/myoffers/offers/#{offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
+          </p>
+          <h2 class="card__title"><%= offer.price %> €</h2>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

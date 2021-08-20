@@ -36,9 +36,12 @@
         <h2 class="card__title">
           <%= offer.title %>
         </h2>
-        <p class="card__apply">
-          <a class="card__link"><%= link_to "See full offer", "/offers/#{offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
-        </p>
+        <div class="d-flex justify-content-between">
+          <p class="card__apply">
+            <a class="card__link"><%= link_to "See full offer", "/offers/#{offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
+          </p>
+          <h2 class="card__title"><%= offer.price %> €</h2>
+        </div>
       </div>
     <% end %>
   </div>
