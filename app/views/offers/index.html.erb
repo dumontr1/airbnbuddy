@@ -9,6 +9,18 @@
     <h3>All offers</h3>
   </div>
 </div>
+
+<div class="nav-bar">
+  <%= form_tag offers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find what you need"
+  %>
+  <%= submit_tag "Search", class: "btn btn-success" %>
+  <% end %>
+</div>
+
 <div id="cont-cards">
   <div class="cards">
     <% @offers.each do |offer| %>
