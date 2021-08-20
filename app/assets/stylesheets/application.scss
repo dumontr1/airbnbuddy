@@ -12,6 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  background-color: #f9f9f9;
+}
+
 .main-container {
   min-height: 80vh;
 }
@@ -20,8 +24,8 @@
   color: grey;
   padding-top: 30px;
   border-bottom: solid grey 1px;
+  opacity: 0.6;
 }
-
 
 .mb-20px {
     margin-bottom: 20px;

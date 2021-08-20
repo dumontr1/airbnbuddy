@@ -76,6 +76,26 @@ a:hover {
   text-decoration: none;
 }
 
+.card-lg {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  background: radial-gradient(#76b2fe, #b69efe);
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 100px;
+  margin-right: 80px;
+  margin-left: 80px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.card-md {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  background: radial-gradient(#76b2fe, #b69efe);
+  padding: 25px;
+  border-radius: 4px;
+  margin-top: 30px;
+  width: 80%;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+}
 /* CARD BACKGROUNDS */
 
 // .card-1 {
