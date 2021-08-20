@@ -24,20 +24,22 @@
 <div id="cont-cards">
   <div class="cards">
     <% @offers.each do |offer| %>
-    <div class="card card-<%= rand(1..5) %>">
-      <div class="notification-content">
-        <p><small><%= offer.user.nickname %></small></p>
+      <div class="card card-<%= rand(1..5) %>">
+        <div class="card__icon d-flex">
+          <div class="align-self-center pr-3">
+            <%= cl_image_tag offer.user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %>
+          </div>
+          <div class="notification-content text-dark align-self-center">
+            <p><small><%= offer.user.nickname %> - <%= offer.city %></small></p>
+          </div>
+        </div>
+        <h2 class="card__title">
+          <%= offer.title %>
+        </h2>
+        <p class="card__apply">
+          <a class="card__link"><%= link_to "See full offer", "/offers/#{offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
+        </p>
       </div>
-      <div class="card__icon">
-        <%= cl_image_tag offer.user.photo.key, class: "avatar-large fas fa-bolt card__exit", alt: "avatar-large" %>
-      </div>
-      <h2 class="card__title">
-        <%= offer.title %>
-      </h2>
-      <p class="card__apply">
-        <a class="card__link"><%= link_to "See full offer", "/offers/#{offer.id}", class:"card__link"%> <i class="fas fa-arrow-right" style="color:white"></i></a>
-      </p>
-    </div>
     <% end %>
   </div>
 </div>
